@@ -1,0 +1,9 @@
+env/
+*__pycache__*
+
+
+# RESULT FILES
+*security_hub_*
+*guard_duty_*
+*s3_*
+results/

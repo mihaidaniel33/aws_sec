@@ -1,0 +1,48 @@
+---
+security_hub:
+  aws_regions:
+  - eu-west-1
+  - us-east-2
+  - us-west-2
+  aws_accounts:
+
+  result_dir: results
+  exporters:
+  - csv
+  statistics:
+  - COUNT
+  - RESOURCES
+  - FIDS
+  filters:
+    SeverityLabel:
+    - Value: HIGH
+      Comparison: EQUALS
+    Title:
+    - Value: SSM.1 EC2 instances should be managed by AWS Systems Manager
+      Comparison: NOT_EQUALS
+    - Value: EC2.8 EC2 instances should use Instance Metadata Service Version 2 (IMDSv2)
+      Comparison: NOT_EQUALS
+    - Value: EC2.9 EC2 instances should not have a public IPv4 address
+      Comparison: NOT_EQUALS
+    - Value: EC2.3 Attached EBS volumes should be encrypted at-rest
+      Comparison: NOT_EQUALS
+guard_duty:
+  aws_regions:
+  - eu-west-1
+  - us-east-2
+  - us-west-2
+  aws_accounts:
+  
+  result_dir: results
+  exporters:
+  - csv
+s3:
+  aws_regions:
+  - eu-west-1
+  - us-east-2
+  - us-west-2
+  aws_accounts:
+  
+  result_dir: results
+  exporters:
+  - csv
